@@ -1,0 +1,10 @@
+{% extends 'layout.html' %}
+{% block content %}
+<h2>Add Project</h2>
+<form method="post">
+  <input type="text" name="name" placeholder="Name" required><br>
+  <textarea name="description" placeholder="Description"></textarea><br>
+  <input type="text" name="deadline" placeholder="Deadline"><br>
+  <input type="submit" value="Create">
+</form>
+{% endblock %}
