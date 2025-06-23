@@ -1,0 +1,9 @@
+{% extends 'layout.html' %}
+{% block content %}
+<h2>Developer Dashboard</h2>
+<ul>
+{% for p in projects %}
+  <li><a href="{{ url_for('project_detail', project_id=p.id) }}">{{ p.name }}</a></li>
+{% endfor %}
+</ul>
+{% endblock %}

@@ -1,0 +1,9 @@
+{% extends 'layout.html' %}
+{% block content %}
+<h2>Account Settings</h2>
+<form method="post">
+  <input type="password" name="password" placeholder="New Password"><br>
+  <label><input type="checkbox" name="mfa" value="enable"> Enable MFA</label><br>
+  <input type="submit" value="Update">
+</form>
+{% endblock %}

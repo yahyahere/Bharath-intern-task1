@@ -1,0 +1,17 @@
+{% extends 'layout.html' %}
+{% block content %}
+<h2>Admin Dashboard</h2>
+<a href="{{ url_for('add_project') }}">Add Project</a> | <a href="{{ url_for('add_user') }}">Add User</a>
+<h3>Projects</h3>
+<ul>
+{% for p in projects %}
+  <li><a href="{{ url_for('project_detail', project_id=p.id) }}">{{ p.name }}</a> {% if not p.completed %}<a href="{{ url_for('mark_complete', project_id=p.id) }}">[Mark Complete]</a>{% endif %}</li>
+{% endfor %}
+</ul>
+<h3>Users</h3>
+<ul>
+{% for u in users %}
+  <li>{{ u.username }} ({{ u.role }})</li>
+{% endfor %}
+</ul>
+{% endblock %}
